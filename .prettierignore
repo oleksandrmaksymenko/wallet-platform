@@ -1,0 +1,9 @@
+/dist
+/coverage
+/.nx
+/node_modules
+/tmp
+**/migrations/*.ts
+pnpm-lock.yaml
+package-lock.json
+*.proto

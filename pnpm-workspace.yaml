@@ -8,7 +8,7 @@ supportedArchitectures:
   cpu:
     - x64
 allowBuilds:
-  '@parcel/watcher': true
+  "@parcel/watcher": true
   nx: true
   unrs-resolver: true
   "@nestjs/core": false

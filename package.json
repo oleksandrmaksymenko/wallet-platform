@@ -8,7 +8,9 @@
     "test": "nx test",
     "lint": "nx lint",
     "graph": "nx graph",
-    "details": "nx show project web"
+    "details": "nx show project web",
+    "format": "nx format:write",
+    "format:check": "nx format:check"
   },
   "private": true,
   "packageManager": "pnpm@12.6.0",
@@ -54,6 +56,7 @@
     "jiti": "2.4.2",
     "jsonc-eslint-parser": "^2.1.0",
     "nx": "23.2.1",
+    "prettier": "^3.9.9",
     "ts-jest": "^29.4.7",
     "ts-node": "10.9.1",
     "tslib": "^2.3.0",
@@ -81,9 +84,11 @@
     "@nestjs/core": "^11.0.0",
     "@nestjs/microservices": "^11",
     "@nestjs/platform-express": "^11.0.0",
+    "@types/supertest": "^7.2.1",
     "axios": "^1.6.0",
     "express": "^4.21.2",
     "reflect-metadata": "^0.2.0",
-    "rxjs": "^7.8.0"
+    "rxjs": "^7.8.0",
+    "supertest": "^7.3.0"
   }
 }

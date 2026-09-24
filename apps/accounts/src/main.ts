@@ -5,8 +5,8 @@
 
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-import { MicroserviceOptions, Transport } from "@nestjs/microservices";
-import {AppModule} from "./app/app.module";
+import { MicroserviceOptions, Transport } from '@nestjs/microservices';
+import { AppModule } from './app/app.module';
 
 async function bootstrap() {
   const port = Number(process.env.ACCOUNTS_TCP_PORT ?? 4001);
