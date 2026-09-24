@@ -1,4 +1,12 @@
+nodeLinker: hoisted
 autoInstallPeers: true
+supportedArchitectures:
+  os:
+    - win32
+    - linux
+    - current
+  cpu:
+    - x64
 allowBuilds:
   '@parcel/watcher': true
   nx: true

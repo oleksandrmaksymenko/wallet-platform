@@ -91,5 +91,7 @@
         "spa": true
       }
     }
-  }
+  },
+  "proxyConfig": "apps/web/proxy.conf.js",
+  "port": 4200
 }

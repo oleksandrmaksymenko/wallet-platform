@@ -2,7 +2,14 @@
   "name": "@wallet-platform/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "nx run-many -t serve -p gateway accounts web",
+    "build": "nx build",
+    "test": "nx test",
+    "lint": "nx lint",
+    "graph": "nx graph",
+    "details": "nx show project web"
+  },
   "private": true,
   "packageManager": "pnpm@12.6.0",
   "devDependencies": {
