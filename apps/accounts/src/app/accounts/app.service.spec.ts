@@ -1,9 +1,8 @@
 import { Test } from '@nestjs/testing';
 import { RpcException } from '@nestjs/microservices';
-import { AccountsModule } from './accounts.module';
 import { AccountsService } from './accounts.service';
 import { CompaniesService } from './companies.service';
-import { AppModule } from '@nestjs/schematics/dist/lib/application/files/ts/src/app.module';
+import { AppModule } from '../app.module';
 
 describe('AccountsService', () => {
   let accounts: AccountsService;

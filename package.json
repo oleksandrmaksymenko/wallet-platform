@@ -68,7 +68,9 @@
     "webpack-cli": "^7.0.0",
     "webpack-dev-server": "^5.2.1"
   },
-  "nx": {},
+  "nx": {
+    "includedScripts": []
+  },
   "dependencies": {
     "@angular-devkit/build-angular": "~22.1.0",
     "@angular/common": "~22.1.0",

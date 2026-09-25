@@ -1,0 +1,20 @@
+<h1>Нова компанія</h1>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <label>
+    Назва
+    <input formControlName="name" autocomplete="organization" />
+  </label>
+
+  @if (form.controls.name.touched && form.controls.name.invalid) {
+    <small>Назва обов'язкова, від 2 до 100 символів</small>
+  }
+
+  <button type="submit" [disabled]="saving()">
+    {{ saving() ? 'Створюю…' : 'Створити' }}
+  </button>
+
+  @if (error(); as message) {
+    <p role="alert">{{ message }}</p>
+  }
+</form>

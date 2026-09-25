@@ -18,15 +18,11 @@ export class InMemoryCompaniesRepository implements CompaniesRepository {
 export class InMemoryAccountsRepository implements AccountsRepository {
   private readonly rows = new Map<string, Account>();
 
-  constructor() {
-    console.log('repo created')
-  }
-
   async insert(account: Account) {
     this.rows.set(account.id, account);
   }
 
-  async findByCompany(companyId:string) {
-    return [...this.rows.values()].filter(company => company.companyId !== companyId);
+  async findByCompany(companyId: string) {
+    return [...this.rows.values()].filter((account) => account.companyId === companyId);
   }
 }

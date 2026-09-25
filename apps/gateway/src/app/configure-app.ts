@@ -1,4 +1,4 @@
-import {ExecutionContext, INestApplication} from '@nestjs/common';
+import { INestApplication } from '@nestjs/common';
 import { correlationId } from './correlation-id';
 
 export const configureApp = (app: INestApplication): void => {

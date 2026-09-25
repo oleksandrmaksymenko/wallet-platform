@@ -29,11 +29,11 @@ describe('gateway /api/companies', () => {
 
     const res = await request(app.getHttpServer())
       .post('/api/companies')
-      .set('x-correction-id', 'test-cid-123')
+      .set('x-correlation-id', 'test-cid-123')
       .send({ name: 'Test' })
       .expect(201);
 
-    expect(res.headers['x-correction-id']).toBe('test-cid-123');
+    expect(res.headers['x-correlation-id']).toBe('test-cid-123');
     expect(send).toHaveBeenCalledWith(AccountsPatterns.CreateCompany, {
       meta: { correlationId: 'test-cid-123' },
       data: { name: 'Test' },
@@ -45,9 +45,9 @@ describe('gateway /api/companies', () => {
 
     const res = await request(app.getHttpServer())
       .get('/api/companies/a1/accounts')
-      .set('x-correction-id', 'bad id INJECTED')
+      .set('x-correlation-id', 'bad id INJECTED')
       .expect(200);
 
-    expect(res.headers['x-correction-id']).toMatch(/^[0-9a-f-]{36}$/);
+    expect(res.headers['x-correlation-id']).toMatch(/^[0-9a-f-]{36}$/);
   });
 });

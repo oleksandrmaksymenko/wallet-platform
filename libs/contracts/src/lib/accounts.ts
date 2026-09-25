@@ -7,7 +7,13 @@ export const AccountsPatterns = {
   ListAccounts: 'accounts.account.list',
 };
 
-export type Currency = 'UAH' | 'USD' | 'EUR';
+export enum CurrencyEnum {
+  USD = 'USD',
+  UAH = 'UAH',
+  EUR = 'EUR',
+}
+
+export type Currency = keyof typeof CurrencyEnum;
 
 export interface CompanyDTO {
   id: string;
@@ -23,8 +29,17 @@ export interface AccountDTO {
   createdAt: string;
 }
 
-export interface CreateCompanyInput { name: string; };
-export interface GetCompanyInput { companyId: string; };
-export interface OpenAccountInput { companyId: string; currency: Currency; name: string; };
-export interface ListAccountsInput { companyId: string; }
-
+export interface CreateCompanyInput {
+  name: string;
+}
+export interface GetCompanyInput {
+  companyId: string;
+}
+export interface OpenAccountInput {
+  companyId: string;
+  currency: Currency;
+  name: string;
+}
+export interface ListAccountsInput {
+  companyId: string;
+}

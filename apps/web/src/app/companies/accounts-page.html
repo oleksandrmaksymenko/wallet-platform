@@ -1,0 +1,34 @@
+<a routerLink="/companies/new">Створити іншу компанію</a>
+<h1>Рахунки компанії</h1>
+<p><small>{{ companyId() }}</small></p>
+
+@if (accounts.error()) {
+  <p role="alert">Не вдалося завантажити рахунки</p>
+} @else if (accounts.hasValue()) {
+  <ul>
+    @for (a of accounts.value(); track a.id) {
+      <li>{{ a.name }} · {{ a.currency }}</li>
+    } @empty {
+      <li>Рахунків ще немає</li>
+    }
+  </ul>
+} @else {
+  <p>Завантаження…</p>
+}
+
+<h2>Відкрити рахунок</h2>
+<form [formGroup]="form" (ngSubmit)="open()">
+  <input formControlName="name" placeholder="Назва, наприклад Main" />
+
+  <select formControlName="currency">
+    @for (c of currencies; track c) {
+      <option [value]="c">{{ c }}</option>
+    }
+  </select>
+
+  <button type="submit" [disabled]="saving()">Відкрити</button>
+
+  @if (error(); as message) {
+    <p role="alert">{{ message }}</p>
+  }
+</form>
